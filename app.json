@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "alugueumcarro",
+    "slug": "alugueumcarro",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "alugueumcarro"
+}
