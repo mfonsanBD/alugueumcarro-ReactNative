@@ -25,7 +25,11 @@ export function Home(){
           <S.CountItems>Total de 12 carros</S.CountItems>
         </S.HeaderContent>
       </S.Header>
-      <CardCar data={carData}/>
+      <S.CarList
+        data={[1,2,3,4,5,6,7,8,9]}
+        keyExtractor={item=>String(item)}
+        renderItem={({item})=><CardCar data={carData} />}
+      />
     </S.Container>
   );
 }

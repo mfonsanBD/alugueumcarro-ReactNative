@@ -35,7 +35,7 @@ export function CardCar({ data }: Props){
         </S.About>
       </S.Details>
 
-      <S.CarImage resizeMode="cover" source={{uri: data.thumbnail}}/>
+      <S.CarImage resizeMode="contain" source={{uri: data.thumbnail}}/>
     </S.Container>
   );
 }
