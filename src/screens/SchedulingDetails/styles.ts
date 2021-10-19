@@ -16,11 +16,12 @@ export default {
     padding-left: 24px;
   `,
   CarImages: styled.View`
-    margin-top: ${getStatusBarHeight() + RFValue(28)}px;
+    margin-top: ${getStatusBarHeight() + RFValue(25)}px;
   `,
   Content: styled.ScrollView.attrs({
     contentContainerStyle: {
-      padding: 24,
+      paddingLeft: 24,
+      paddingRight: 24,
       alignItems: 'center'
     },
     showsVerticalScrollIndicator: false
@@ -56,13 +57,62 @@ export default {
     font-size: ${RFValue(25)}px;
     font-family: ${({theme})=>theme.fonts.secondary_500};
   `,
-  About: styled.Text`
-    color: ${({theme})=>theme.colors.text};
+  RentalPeriod: styled.View`
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: ${RFValue(30)}px 0;
+    padding-bottom: ${RFValue(15)}px;
+    margin-bottom: ${RFValue(15)}px;
+    border-bottom-width: 1px;
+    border-bottom-color: ${({theme})=>theme.colors.line};
+  `,
+  CalendarIcon: styled.View`
+    width: 50px;
+    height: 50px;
+    background-color: ${({theme})=>theme.colors.main};
+    justify-content: center;
+    align-items: center;
+  `,
+  DateInfo: styled.View`
+    width: 30%;
+  `,
+  DateTitle: styled.Text`
+    color: ${({theme})=>theme.colors.text_details};
+    font-family: ${({theme})=>theme.fonts.secondary_500};
+    font-size: ${RFValue(10)}px;
+    text-transform: uppercase;
+  `,
+  DateValue: styled.Text`
+    color: ${({theme})=>theme.colors.title};
+    font-family: ${({theme})=>theme.fonts.primary_500};
     font-size: ${RFValue(15)}px;
-    font-family: ${({theme})=>theme.fonts.primary_400};
-    text-align: justify;
-    margin-top: 24px;
-    line-height: ${RFValue(25)}px;
+  `,
+  RentalPrice: styled.View`
+    width: 100%;
+  `,
+  RentalLabel: styled.Text`
+    color: ${({theme})=>theme.colors.text_details};
+    font-family: ${({theme})=>theme.fonts.secondary_500};
+    font-size: ${RFValue(10)}px;
+    text-transform: uppercase;
+  `,
+  RentalDetails: styled.View`
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  `,
+  RentalQuota: styled.Text`
+    color: ${({theme})=>theme.colors.title};
+    font-family: ${({theme})=>theme.fonts.primary_500};
+    font-size: ${RFValue(15)}px;
+  `,
+  RentalPriceTotal: styled.Text`
+    color: ${({theme})=>theme.colors.success};
+    font-family: ${({theme})=>theme.fonts.secondary_500};
+    font-size: ${RFValue(24)}px;
   `,
   Accessories: styled.View`
     width: 100%;

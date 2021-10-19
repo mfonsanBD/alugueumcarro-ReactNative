@@ -13,17 +13,19 @@ import pessoas from '../../assets/pessoas.svg';
 
 import S from './styles';
 import { Button } from '../../components/Button';
+import { StatusBar } from 'react-native';
 
 export function CarDetails(){
   return (
     <S.Container>
+    <StatusBar barStyle="dark-content" />
 
       <S.Header>
         <BackButton onPress={()=>{}} />
       </S.Header>
 
       <S.CarImages>
-        <ImageSlider imagesUrl={['https://priceinsouthafrica.com/wp-content/uploads/2021/03/Audi-RS5-Coupe-2021-Price-in-South-Africa.png']}/>
+        <ImageSlider imagesUrl={['https://www.seekpng.com/png/full/673-6737792_lamborghini-urus-3-png.png']}/>
       </S.CarImages>
 
       <S.Content>
@@ -59,7 +61,7 @@ export function CarDetails(){
       </S.Content>
       
       <S.Footer>
-        <Button title="Confirmar"/>
+        <Button title="Escolher período do aluguel"/>
       </S.Footer>
 
     </S.Container>

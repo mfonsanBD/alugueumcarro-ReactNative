@@ -19,7 +19,7 @@ export function ImageSlider({imagesUrl}: Props){
       <S.CarImageWrapper>
         <S.CarImage
           source={{uri: imagesUrl[0]}}
-          resizeMode="cover"
+          resizeMode="contain"
         />
       </S.CarImageWrapper>
     </S.Container>

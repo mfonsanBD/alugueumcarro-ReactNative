@@ -1,5 +1,9 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
+import { Feather } from '@expo/vector-icons';
+import { useTheme } from 'styled-components';
 
+import { Button } from '../../components/Button';
 import { Accessory } from '../../components/Accessory';
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
@@ -12,18 +16,19 @@ import gasolina from '../../assets/gasolina.svg';
 import pessoas from '../../assets/pessoas.svg';
 
 import S from './styles';
-import { Button } from '../../components/Button';
 
 export function SchedulingDetails(){
+  const theme = useTheme();
   return (
     <S.Container>
+      <StatusBar barStyle="dark-content" />
 
       <S.Header>
         <BackButton onPress={()=>{}} />
       </S.Header>
 
       <S.CarImages>
-        <ImageSlider imagesUrl={['https://priceinsouthafrica.com/wp-content/uploads/2021/03/Audi-RS5-Coupe-2021-Price-in-South-Africa.png']}/>
+        <ImageSlider imagesUrl={['https://www.seekpng.com/png/full/673-6737792_lamborghini-urus-3-png.png']}/>
       </S.CarImages>
 
       <S.Content>
@@ -50,16 +55,44 @@ export function SchedulingDetails(){
           <Accessory name="2 Pessoas" icon={pessoas}/>
         </S.Accessories>
 
-        <S.About>
-          Este automóvel é desportivo. Surgiu do lendário
-          touro de lide indultado da praça Real Maestranza de Sevilla.
-          É um belíssimo carro para quem gosta de acelerar.
-        </S.About>
+        <S.RentalPeriod>
+          <S.CalendarIcon>
+            <Feather
+              name="calendar"
+              size={24}
+              color={theme.colors.background_secondary}
+            />
+          </S.CalendarIcon>
+
+          <S.DateInfo>
+            <S.DateTitle>De</S.DateTitle>
+            <S.DateValue>19/10/2021</S.DateValue>
+          </S.DateInfo>
+
+          <Feather
+            name="chevron-right"
+            size={24}
+            color={theme.colors.text_details}
+          />
+          
+          <S.DateInfo>
+            <S.DateTitle>Até</S.DateTitle>
+            <S.DateValue>23/10/2021</S.DateValue>
+          </S.DateInfo>
+        </S.RentalPeriod>
+
+        <S.RentalPrice>
+          <S.RentalLabel>Total</S.RentalLabel>
+          <S.RentalDetails>
+            <S.RentalQuota>R$ 580 3x diárias</S.RentalQuota>
+            <S.RentalPriceTotal>R$ 2.900</S.RentalPriceTotal>
+          </S.RentalDetails>
+        </S.RentalPrice>
 
       </S.Content>
       
       <S.Footer>
-        <Button title="Confirmar"/>
+        <Button title="Alugar Agora" color={theme.colors.success}/>
       </S.Footer>
 
     </S.Container>
