@@ -1,27 +1,37 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
+import { Button } from '../../components/Button';
 import { Accessory } from '../../components/Accessory';
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 
-import speed from '../../assets/speed.svg';
 import up from '../../assets/up.svg';
-import cambio from '../../assets/cambio.svg';
 import forca from '../../assets/forca.svg';
-import gasolina from '../../assets/gasolina.svg';
+import speed from '../../assets/speed.svg';
+import cambio from '../../assets/cambio.svg';
 import pessoas from '../../assets/pessoas.svg';
+import gasolina from '../../assets/gasolina.svg';
 
 import S from './styles';
-import { Button } from '../../components/Button';
-import { StatusBar } from 'react-native';
 
 export function CarDetails(){
+  const navigation = useNavigation();
+
+  const handleScheduling = () => {
+    navigation.navigate('Scheduling');
+  }
+
+  const handleBack = () => {
+    navigation.goBack();
+  }
   return (
     <S.Container>
     <StatusBar barStyle="dark-content" />
 
       <S.Header>
-        <BackButton onPress={()=>{}} />
+        <BackButton onPress={handleBack} />
       </S.Header>
 
       <S.CarImages>
@@ -61,7 +71,7 @@ export function CarDetails(){
       </S.Content>
       
       <S.Footer>
-        <Button title="Escolher período do aluguel"/>
+        <Button title="Escolher período do aluguel" onPress={handleScheduling}/>
       </S.Footer>
 
     </S.Container>

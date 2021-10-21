@@ -2,6 +2,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useTheme } from 'styled-components';
+import { useNavigation } from '@react-navigation/native';
 
 import { Button } from '../../components/Button';
 import { Accessory } from '../../components/Accessory';
@@ -19,12 +20,21 @@ import S from './styles';
 
 export function SchedulingDetails(){
   const theme = useTheme();
+  const navigation = useNavigation();
+
+  const handleSchedulingComplete = () => {
+    navigation.navigate('SchedulingComplete');
+  }
+
+  const handleBack = () => {
+    navigation.goBack();
+  }
   return (
     <S.Container>
       <StatusBar barStyle="dark-content" />
 
       <S.Header>
-        <BackButton onPress={()=>{}} />
+        <BackButton onPress={handleBack} />
       </S.Header>
 
       <S.CarImages>
@@ -92,7 +102,7 @@ export function SchedulingDetails(){
       </S.Content>
       
       <S.Footer>
-        <Button title="Alugar Agora" color={theme.colors.success}/>
+        <Button title="Alugar Agora" color={theme.colors.success} onPress={handleSchedulingComplete} />
       </S.Footer>
 
     </S.Container>

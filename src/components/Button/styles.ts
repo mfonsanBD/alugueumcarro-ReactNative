@@ -12,7 +12,7 @@ export default {
     padding: 19px;
     justify-content: center;
     align-items: center;
-    background-color:${({theme, color}) => color ? color : theme.colors.main};
+    background-color:${({color}) => color};
   `,
   Title: styled.Text`
     font-size: ${RFValue(15)}px;
